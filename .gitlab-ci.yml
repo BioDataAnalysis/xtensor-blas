@@ -1,0 +1,23 @@
+stages:
+  - clean
+  - build
+  - test
+  - trigger
+
+variables:
+  DOCKER_IMAGE: bda_cppdev_iadev_guidev
+  GIT_SUBMODULE_STRATEGY: normal
+
+include:
+  - project: 'BioDataAnalysis/BDAScripts'
+    file: '/gitlabci/templates-base.yml'
+
+  - project: 'BioDataAnalysis/BDAScripts'
+    file: '/gitlabci/standard-clean.yml'
+  - project: 'BioDataAnalysis/BDAScripts'
+    file: '/gitlabci/standard-build.yml'
+  - project: 'BioDataAnalysis/BDAScripts'
+    file: '/gitlabci/standard-test.yml'
+
+  - project: 'BioDataAnalysis/BDAScripts'
+    file: '/gitlabci/standard-trigger.yml'

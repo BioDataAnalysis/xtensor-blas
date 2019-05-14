@@ -1,0 +1,25 @@
+{
+    "env":  {
+        "includesDefault": [
+            "${workspaceFolder}/**",
+            "${BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}",
+            "${BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}/**",
+            "${BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}/${workspaceFolderBasename}_autogen/include",
+            "${BDASOFTDEST_OSPATH}/Debug/include/**",
+            "${BDASOFTDEST_OSPATH}/Extras/include/**"
+        ],
+        "definesDefault": [],
+        "compileCommandsDefault": "${env:BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}/compile_commands.json"
+    },
+    "configurations": [
+        {
+            "name": "Any",
+            "includePath": ["${includesDefault}"],
+            "defines": ["${definesDefault}"],
+            "compileCommands": "${compileCommandsDefault}",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

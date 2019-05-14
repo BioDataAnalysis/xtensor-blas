@@ -1,0 +1,21 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "string": "cpp"
+        },
+        "cmake.cmakePath": "${env:BDA_VSCODE_CMAKE_EXTENSION_BDA_BUILD_WRAPPER_OSPATH}",
+        "cmake.ctestPath": "${env:BDASOFTDEST_OSPATH}/Tools/bin/ctest",
+        "cmake.buildDirectory": "${env:BDASOFTTEMP_OSPATH}/${buildType}/${workspaceRootFolderName}/",
+        "cmake.configureOnEdit": false,
+        "cmake.generator": "Ninja",
+        "clangd.arguments": [
+            "--header-insertion=never",
+            "--compile-commands-dir=${env:BDASOFTBUILD_OSPATH}/tmp/cmake/xtensor-blas"
+        ]
+    }
+}

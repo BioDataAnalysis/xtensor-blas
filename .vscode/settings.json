@@ -1,0 +1,29 @@
+{
+    "files.watcherExclude": {
+        "**/.git/**": true,
+        "**/node_modules/**": true
+    },
+    //"testMate.cpp.log.logpanel": true,
+    //"testMate.cpp.log.logfile": "/tmp/testMate.log",
+    "testMate.cpp.debug.breakOnFailure": false,
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "name": "${filename}",
+            "description": "(Test)",
+            "cwd": "${absDirpath}",
+            "pattern": "${os_env:BDASOFTTEMP_OSPATH}/Debug/${workspaceName}/*Test*",
+            "env": {
+                "PATH": "${os_env:BDASOFTDEST_OSPATH}/Debug/bin${osPathEnvSep}${os_env:BDASOFTDEST_OSPATH}/Extras/bin${osPathEnvSep}${os_env:PATH}"
+            }
+        },
+        {
+            "name": "${filename}",
+            "description": "(Benchmark)",
+            "cwd": "${absDirpath}",
+            "pattern": "${os_env:BDASOFTTEMP_OSPATH}/Release/${workspaceName}/*Benchmark*",
+            "env": {
+                "PATH": "${os_env:BDASOFTDEST_OSPATH}/Release/bin${osPathEnvSep}${os_env:BDASOFTDEST_OSPATH}/Extras/bin${osPathEnvSep}${os_env:PATH}"
+            }
+        }
+    ]
+}

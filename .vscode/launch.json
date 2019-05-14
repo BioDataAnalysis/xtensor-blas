@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "LLDB Debug TensorViewTest",
+            "type": "lldb",
+            "program": "${env:BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}/TensorViewTest",
+            "request": "launch",
+            "args": [],
+            "cwd": "${env:BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}",
+            "environment": [],
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "MSVC Debug TensorViewTest",
+            "type": "cppvsdbg",
+            "program": "${env:BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}/TensorViewTest.exe",
+            "request": "launch",
+            "args": [],
+            "cwd": "${env:BDASOFTTEMP_OSPATH}/Debug/${workspaceFolderBasename}",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "%BDASOFTTEMP_OSPATH%/Debug/${workspaceFolderBasename};%BDASOFTDEST_OSPATH%/Debug/bin;%BDASOFTDEST_OSPATH%/Extras/bin;%PATH%"
+                }
+            ],
+            "console": "internalConsole"
+        }
+    ]
+}

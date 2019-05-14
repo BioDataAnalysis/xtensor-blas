@@ -1,0 +1,98 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build debug",
+            "type": "shell",
+            "command": "bash ./bda-build-project.sh --verbose=10 --debug --build",
+            "presentation": {
+                "focus": true,
+                "revealProblems": "onProblem",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "windows": {
+                "problemMatcher": {
+                    "owner": "cpp",
+                    "fileLocation": "absolute",
+                    "pattern": {
+                        "regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(warning|error):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                }
+            }
+        },
+        {
+            "label": "build release",
+            "type": "shell",
+            "command": "bash ./bda-build-project.sh --verbose=10 --release --build",
+            "group": "build",
+            "presentation": {
+                "focus": true,
+                "revealProblems": "onProblem",
+                "showReuseMessage": false,
+                "clear": true
+            },
+            "windows": {
+                "problemMatcher": {
+                    "owner": "cpp",
+                    "fileLocation": "absolute",
+                    "pattern": {
+                        "regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(warning|error):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                }
+            }
+        },
+        {
+            "label": "build doc",
+            "type": "shell",
+            "command": "bash ./bda-build-project.sh --verbose=10 --release --doc",
+            "group": "build",
+            "presentation": {
+                "focus": true,
+                "revealProblems": "onProblem",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "bash ./bda-build-project.sh --verbose=10 --clean",
+            "group": "build",
+            "presentation": {
+                "focus": true,
+                "revealProblems": "onProblem",
+                "showReuseMessage": false,
+                "clear": true
+            }
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "bash ./bda-build-project.sh --verbose=10 --test",
+            "presentation": {
+                "focus": true,
+                "revealProblems": "onProblem",
+                "showReuseMessage": false
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
