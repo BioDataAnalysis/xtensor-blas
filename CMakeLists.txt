@@ -10,6 +10,8 @@
 cmake_minimum_required(VERSION 3.1)
 project(xtensor-blas)
 
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_PREFIX_PATH})
+
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(XTENSOR_BLAS_INCLUDE_DIR ${INCLUDE_DIR})
 
