@@ -97,7 +97,7 @@ message(STATUS "BLAS VENDOR:    " ${BLA_VENDOR})
 message(STATUS "BLAS LIBRARIES: " ${BLAS_LIBRARIES})
 
 if (HAVE_CBLAS)
-    if (WIN32)
+    if (USE_OPENBLAS)
         find_package(OpenBLAS REQUIRED)
         set(BLAS_LIBRARIES ${CMAKE_INSTALL_PREFIX}${OpenBLAS_LIBRARIES})
     else()
