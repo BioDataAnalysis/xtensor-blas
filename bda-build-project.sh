@@ -57,13 +57,13 @@ PROJECT_OPTIONS=(
     "-DBUILD_SHARED_LIBS="$(test "${BDA_BUILD_TYPE}" == "Shared" && echo "ON" || echo "OFF")
     "-DBUILD_TESTS="$(test "${BDA_RELEASE_TYPE}" == "Debug" && echo "ON" || echo "OFF")
     "-DBUILD_BENCHMARK="$(test "${BDA_RELEASE_TYPE}" == "Release" && echo "ON" || echo "OFF")
+    # Configure BLAS libraries for CMake:
+    "-DBLA_VENDOR=${BDA_BUILD_OPTION_CMAKE_BLAS_VENDOR}"
+    "-DBLA_STATIC=${BDA_BUILD_OPTION_CMAKE_BLAS_STATIC}"
     # Configure the use of OpenBLAS or "any" BLAS in tests and benchmarks:
     "-DUSE_OPENBLAS="$(test "${BDATARGETPLATFORMNAME}" == "Android" && echo "ON" || echo "OFF")
     # Configure the use of an external BLAS or the shipped FLENS BLAS in tests and benchmarks:
     "-DHAVE_CBLAS=ON"
-    # Configure BLAS libraries for CMake:
-    "-DBLA_VENDOR=${BDA_MKL_BLA_VENDOR}"
-    "-DBLA_STATIC=${BDA_MKL_BLA_STATIC}"
     "-DCPP17=ON"
     "-DCXXBLAS_DEBUG=OFF"
     "-DXTENSOR_USE_FLENS_BLAS=OFF"
