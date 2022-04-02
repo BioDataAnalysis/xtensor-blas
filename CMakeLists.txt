@@ -94,7 +94,7 @@ if(OpenBLAS_DIR)
 endif()
 
 if(XTENSOR_USE_FLENS_BLAS)
-  add_definitions(-DXTENSOR_USE_FLENS_BLAS=1)
+  target_compile_definitions(xtensor-blas INTERFACE -DXTENSOR_USE_FLENS_BLAS=1)
 endif()
 
 if (CXXBLAS_DEBUG)
